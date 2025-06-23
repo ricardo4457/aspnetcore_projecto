@@ -1,0 +1,55 @@
+﻿@using Alves_Bandeira.Models;
+@model Fatura
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/CSS/StyleSheet.css" />
+    <title>Detalhe da Fatura - Alves Bandeira</title>
+</head>
+<body class="det-page">
+    <div class="det-container"
+   <h1 class="det-title">Detalhe da Fatura</h1>
+   <table  class="det-table">
+        <tr>
+            <td><strong>Nif:</strong></td>
+            <td>@Model.Nif</td>
+        </tr>
+        <tr>
+            <td><strong>Preço :</strong></td>
+            <td>@Model.Preco</td>
+        </tr>
+        <tr>
+            <td><strong>Tipo de Combustível:</strong></td>
+            <td>@switch (Model.TipoComb)
+                        {
+                            case Alves_Bandeira.Models.Fatura.TipoCombustivel.Gasolina:
+                                <span>Gasolina</span>
+                                break;
+                            case Alves_Bandeira.Models.Fatura.TipoCombustivel.Diesel:
+                                <span>Diesel</span>
+                                break;
+                            case Alves_Bandeira.Models.Fatura.TipoCombustivel.Gpl:
+                                <span>GPL</span>
+                                break;
+                        }</td>
+        </tr>
+        <tr>
+            <td><strong>Estado:</strong></td>
+            <td>
+                     <span class="det-status @(Model.Estado == Fatura.EstadoFatura.Valida ? "det-status-valid" : "det-status-invalid")">
+                            @(Model.Estado == Fatura.EstadoFatura.Valida ? "Válida" : "Inválida")
+                        </span>
+            </td>
+        </tr>
+    </table>
+        <a  class="det-back-link" href="/Fatura/Index">Pagina Inicial</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1058 @@
+﻿/* Reset e estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cores da marca Alves Bandeira */
+:root {
+    --primary-color: #0056b3; /* Azul principal */
+    --secondary-color: #ffc107; /* Amarelo/dourado */
+    --accent-color: #e63946; /* Vermelho para destaques */
+    --dark-color: #1a2a3a; /* Azul escuro */
+    --light-color: #f8f9fa; /* Cinza claro */
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+    header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+    }
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 3rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+    section h2 {
+        color: var(--dark-color);
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+    }
+
+    section p {
+        font-size: 1.1rem;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto 2rem auto;
+    }
+
+/* Botão */
+div {
+    margin-top: 2rem;
+}
+
+a {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 86, 179, 0.2);
+}
+
+    a:hover {
+        background-color: var(--dark-color);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 86, 179, 0.3);
+    }
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 2rem 1.5rem;
+    }
+
+        section h2 {
+            font-size: 1.5rem;
+        }
+
+        section p {
+            font-size: 1rem;
+        }
+}
+/* Estilos melhorados para as text boxes */
+.form-group input {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    .form-group input:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        background-color: white;
+        outline: none;
+    }
+
+    .form-group input::placeholder {
+        color: #a8a8a8;
+        opacity: 1;
+    }
+
+/* Estilos específicos para a página de login */
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.login-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.login-title {
+    color: var(--dark-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.error-message {
+    color: var(--accent-color);
+    background-color: rgba(230, 57, 70, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-left: 4px solid var(--accent-color);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+    .login-form .form-group {
+        margin-bottom: 1.2rem;
+    }
+
+        .login-form .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .login-form .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+        }
+
+            .login-form .form-group input:focus {
+                border-color: var(--primary-color);
+                box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+                background-color: white;
+                outline: none;
+            }
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 86, 179, 0.2);
+}
+
+    .login-button:hover {
+        background-color: var(--dark-color);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 86, 179, 0.3);
+    }
+
+/* Estilos para a seção de links do login */
+.login-divider {
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.login-links {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+    .login-links p {
+        color: #555; /* Cor neutra para o texto */
+        margin-bottom: 1rem;
+    }
+
+    .login-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s ease;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+    }
+
+        .login-links a:hover {
+            color: white;
+            text-decoration: none;
+            background-color: transparent; /* Remove qualquer fundo */
+        }
+
+    /* Estilo específico para o link "Voltar" */
+    .login-links > a:last-child {
+        display: block; /* Faz ocupar linha própria */
+        margin-top: 1rem;
+        color: white; /* Cor neutra igual ao texto */
+        font-weight: normal; /* Peso normal */
+    }
+
+        .login-links > a:last-child:hover {
+            color: var(--primary-color); /* Azul da marca no hover */
+            text-decoration: none;
+        }
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    .login-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ESTILOS EXCLUSIVOS PARA REGISTRO - NÃO AFETAM OUTRAS PÁGINAS */
+.reg-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.reg-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.reg-title {
+    color: #1a2a3a;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.reg-error {
+    color: #e63946;
+    background-color: rgba(230, 57, 70, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-left: 4px solid #e63946;
+}
+
+.reg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.reg-form-group {
+    margin-bottom: 1rem;
+}
+
+.reg-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1a2a3a;
+}
+
+.reg-form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+}
+
+    .reg-form-input:focus {
+        border-color: #0056b3;
+        box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        background-color: white;
+        outline: none;
+    }
+
+.reg-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+    .reg-button:hover {
+        background-color: #1a2a3a;
+    }
+
+.reg-divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 1.5rem 0;
+}
+
+.reg-links {
+    text-align: center;
+    color: white;
+}
+
+    .reg-links p {
+        margin-bottom: 0.8rem;
+    }
+
+.reg-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+    .reg-link:hover {
+        text-decoration: none;
+    }
+
+.reg-back-link {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+    .reg-back-link:hover {
+        color: #0056b3;
+    }
+
+@media (max-width: 480px) {
+    .reg-container {
+        padding: 1.5rem;
+    }
+
+    .reg-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* ESTILOS EXCLUSIVOS PARA CRIAÇÃO DE FATURA - PREFIXO fat- */
+.fat-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.fat-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.fat-title {
+    color: #1a2a3a;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.fat-error {
+    color: #e63946;
+    background-color: rgba(230, 57, 70, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-left: 4px solid #e63946;
+}
+
+.fat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.fat-form-group {
+    margin-bottom: 1rem;
+}
+
+.fat-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1a2a3a;
+}
+
+.fat-form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+}
+
+    .fat-form-input:focus {
+        border-color: #0056b3;
+        box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        background-color: white;
+        outline: none;
+    }
+
+.fat-form-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+    .fat-form-select:focus {
+        border-color: #0056b3;
+        box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        outline: none;
+    }
+
+.fat-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.fat-button {
+    padding: 12px 24px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+    .fat-button:hover {
+        background-color: #1a2a3a;
+        transform: translateY(-2px);
+    }
+
+.fat-cancel-link {
+    padding: 12px 24px;
+    background-color: white;
+    color: #0056b3;
+    border: 2px solid #0056b3;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+    .fat-cancel-link:hover {
+        background-color: #f8f9fa;
+        color: #1a2a3a;
+        border-color: #1a2a3a;
+    }
+
+@media (max-width: 480px) {
+    .fat-container {
+        padding: 1.5rem;
+    }
+
+    .fat-title {
+        font-size: 1.5rem;
+    }
+
+    .fat-actions {
+        flex-direction: column;
+    }
+}
+
+/* ESTILOS EXCLUSIVOS PARA DETALHE DE FATURA - PREFIXO det- */
+.det-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.det-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.det-title {
+    color: #1a2a3a;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.det-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+    .det-table tr {
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+        .det-table tr:last-child {
+            border-bottom: none;
+        }
+
+    .det-table td {
+        padding: 1rem 0.5rem;
+        vertical-align: top;
+    }
+
+        .det-table td:first-child {
+            font-weight: 600;
+            color: #1a2a3a;
+            width: 40%;
+        }
+
+        .det-table td:last-child {
+            color: #333;
+        }
+
+.det-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.det-status-valid {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+}
+
+.det-status-invalid {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+}
+
+.det-back-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+    .det-back-link:hover {
+        background-color: #1a2a3a;
+        transform: translateY(-2px);
+    }
+
+@media (max-width: 480px) {
+    .det-container {
+        padding: 1.5rem;
+    }
+
+    .det-title {
+        font-size: 1.5rem;
+    }
+
+    .det-table td {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 0;
+    }
+
+    .det-table tr {
+        border-bottom: 1px solid #e0e0e0;
+        padding: 0.5rem 0;
+    }
+}
+/* ESTILOS EXCLUSIVOS PARA EDIÇÃO DE FATURA - PREFIXO edit- */
+.edit-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.edit-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.edit-title {
+    color: #1a2a3a;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.edit-error {
+    color: #e63946;
+    background-color: rgba(230, 57, 70, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-left: 4px solid #e63946;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.edit-form-group {
+    margin-bottom: 1rem;
+}
+
+.edit-form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #1a2a3a;
+}
+
+.edit-form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+}
+
+    .edit-form-input:focus {
+        border-color: #0056b3;
+        box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        background-color: white;
+        outline: none;
+    }
+
+.edit-form-select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+    .edit-form-select:focus {
+        border-color: #0056b3;
+        box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        outline: none;
+    }
+
+.edit-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.edit-button {
+    padding: 12px 24px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+    .edit-button:hover {
+        background-color: #1a2a3a;
+        transform: translateY(-2px);
+    }
+
+.edit-cancel-link {
+    padding: 12px 24px;
+    background-color: white;
+    color: #0056b3;
+    border: 2px solid #0056b3;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+    .edit-cancel-link:hover {
+        background-color: #f8f9fa;
+        color: #1a2a3a;
+        border-color: #1a2a3a;
+    }
+
+@media (max-width: 480px) {
+    .edit-container {
+        padding: 1.5rem;
+    }
+
+    .edit-title {
+        font-size: 1.5rem;
+    }
+
+    .edit-actions {
+        flex-direction: column;
+    }
+}
+/* ESTILO FINAL OTIMIZADO PARA OCUPAR O ECRÃ */
+.list-page {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.list-container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    background-color: white;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.list-title {
+    color: #1a2a3a;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.list-user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    background-color: #1a2a3a;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.list-user-text {
+    color: white;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.list-login-link,
+.list-logout-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: background-color 0.2s;
+}
+
+    .list-login-link:hover,
+    .list-logout-link:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+.list-filters {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid #0056b3;
+}
+
+.list-filter-title {
+    color: white;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.list-filter-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 15px;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+    .list-filter-link:hover {
+        border-bottom-color: #0056b3;
+    }
+
+.list-create-link {
+    display: inline-block;
+    background-color: #0056b3;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: all 0.2s;
+}
+
+    .list-create-link:hover {
+        background-color: #1a2a3a;
+        transform: translateY(-1px);
+    }
+
+.list-stats {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #1a2a3a;
+    border-radius: 6px;
+    color: white;
+}
+
+.list-stats-title {
+    color: white;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.list-stats-text {
+    color: white;
+    margin-bottom: 5px;
+    opacity: 0.9;
+}
+
+.list-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+    .list-table th {
+        background-color: #1a2a3a;
+        color: white;
+        padding: 15px;
+        text-align: left;
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+    }
+
+    .list-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #eaeaea;
+        color: #333;
+    }
+
+    .list-table tr:nth-child(even) {
+        background-color: #f8f9fa;
+    }
+
+    .list-table tr:hover {
+        background-color: rgba(0, 86, 179, 0.03);
+    }
+
+.list-action-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 12px;
+    transition: color 0.2s;
+}
+
+    .list-action-link:hover {
+        color: #1a2a3a;
+        text-decoration: underline;
+    }
+
+.list-empty {
+    text-align: center;
+    color: #666;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    font-size: 1rem;
+    border: 1px dashed #ddd;
+}
+
+@media (max-width: 768px) {
+    .list-container {
+        padding: 15px;
+    }
+
+    .list-table {
+        display: block;
+        overflow-x: auto;
+    }
+
+        .list-table th,
+        .list-table td {
+            white-space: nowrap;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+        }
+
+    .list-action-link {
+        display: block;
+        margin-bottom: 8px;
+    }
+}

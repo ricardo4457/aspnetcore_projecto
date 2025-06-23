@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/CSS/StyleSheet.css" />
+    <title>Criar</title>
+</head>
+<body class="fat-page">
+      <div class="fat-container">
+                  <h1 class="fat-title">Criar Fatura</h1>
+
+    @if (ViewBag.Erro != null)
+    {
+        <div class="fat-error">
+            @ViewBag.Erro
+        </div>
+    }
+<form method="post" action="/Fatura/Criar" class="fat-form">
+    <div class="fat-form-group">
+        <label class="fat-form-label" for="Nif">NIF do Cliente:</label>
+        <input class="fat-form-input" type="text" id="Nif" name="Nif" value="@Model?.Nif" required />
+    </div>
+
+    <div class="fat-form-group">
+        <label  class="fat-form-label" for="Preco">Preço (€):</label>
+        <input class="fat-form-input"  type="text" id="Preco" name="Preco" step="0.01" min="0" value="@Model?.Preco" required />
+    </div>
+
+    <div class="fat-form-group">
+        <label   class="fat-form-label" for="TipoComb">Tipo de Combustível:</label>
+        <select  class="fat-form-select" id="TipoComb" name="TipoComb"  required>
+            <option value="0" @(Model?.TipoComb == Alves_Bandeira.Models.Fatura.TipoCombustivel.Gasolina ? "selected" : "")>Gasolina</option>
+            <option value="1" @(Model?.TipoComb == Alves_Bandeira.Models.Fatura.TipoCombustivel.Diesel ? "selected" : "")>Diesel</option>
+            <option value="2" @(Model?.TipoComb == Alves_Bandeira.Models.Fatura.TipoCombustivel.Gpl ? "selected" : "")>GPL</option>
+        </select>
+    </div>
+
+
+    <div class="fat-actions">
+        <button class="fat-button" type="submit">Criar Fatura</button>
+        <a class="fat-button" href="/Fatura/Index">Cancelar</a>
+    </div>
+    </form>
+    </div>
+    </body>
+

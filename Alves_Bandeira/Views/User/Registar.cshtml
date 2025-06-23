@@ -1,0 +1,56 @@
+﻿@using Alves_Bandeira.Models;
+@model User
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="UTF-8">
+    <title>Registar - Alves Bandeira</title>
+        <link rel="stylesheet" href="/CSS/StyleSheet.css" />
+</head>
+<body class="reg-page">
+    <div class="reg-container">
+    <h1  class="reg-title">Criar Nova Conta</h1>
+
+     @if (ViewBag.Erro != null)
+    {
+        <div class="reg-error">
+            @ViewBag.Erro
+        </div>
+    }
+
+    <form method="post" action="/User/Registar" class="reg-form">
+        <div  class="reg-form-group">
+            <label for="Nome" class="reg-form-label">Nome:</label>
+            <input class="reg-form-input" type="text" id="Nome" name="Nome" value="@Model?.Nome" required />
+        </div>
+
+        <div  class="reg-form-group">
+            <label for="Nif" class="reg-form-label">NIF:</label>
+            <input class="reg-form-input" type="text" id="Nif" name="Nif" value="@Model?.Nif" required />
+        </div>
+
+        <div  class="reg-form-group">
+            <label  class="reg-form-label for="Password">Password:</label>
+            <input type="password" id="Password" name="Password" class="reg-form-input" required />
+        </div>
+
+        <br />
+        <button type="submit" class="reg-button">Registar</button>
+    </form>
+
+    <div class="reg-divider"></div>
+
+    <div class="reg-links" >
+        <p>Já tem conta?
+        <a class="reg-link" href="/User/Login">Fazer login</a></p>
+        <a   class="reg-back-link" href="/">Voltar à página inicial</a>
+    </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿@using Alves_Bandeira.Models;
+@model IEnumerable<Fatura>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/CSS/StyleSheet.css" />
+    <title>Lista de Faturas - Alves Bandeira</title>
+</head>
+<body class="list-page">
+    <div class="list-container">
+    <h1 class="list-title">Sistema de Faturas</h1>
+    
+     <div class="list-user-info">
+        @if (ViewBag.User.Papel == 0)
+        {
+            <a href="/User/Login">Entrar</a>
+        }
+        else
+        {
+            <p>Utilizador: @ViewBag.User.Nome (@ViewBag.User.Nif)</p>
+            <a href="/User/Logout">Sair</a>
+        }
+    </div>
+    
+    @if (ViewBag.User.Papel == 2)
+    {
+         <div class="list-filters">
+            <h3  class="list-filter-title">Filtros</h3>
+            <a href="/Fatura/Index/"  class="list-filter-link">Todas</a> 
+            <a href="/Fatura/Index/1"  class="list-filter-link">Válidas</a> 
+            <a href="/Fatura/Index/0"  class="list-filter-link">Inválidas</a>
+            
+            <br/><br/>
+            
+            <a href="/Fatura/Index?sortOrder=asc" class="list-filter-link">Ordenar Ascendente</a> |
+            <a href="/Fatura/Index?sortOrder=desc" class="list-filter-link">Ordenar Descendente</a>
+        </div>
+  
+        <div>
+            <a href="/Fatura/Criar" class="list-create-link">Criar Nova Fatura</a>
+        </div>
+          }
+        <div class="list-stats">
+            <h3 class="list-stats-title">Estatísticas</h3>
+            <p class="list-stats-text">Número de Faturas: @ViewBag.NumeroFaturas</p>
+            <p class="list-stats-text">Total de Faturas: @ViewBag.TotalFaturas €</p>
+        </div>
+        
+        <div>
+            <h3 class="list-filter-title">Lista de Faturas</h3>
+            @if (Model != null && Model.Count() > 0)
+            {
+                <table class="list-table">
+                    <thead>
+                        <tr>
+                            <th>Guid Fatura</th>
+                            <th>NIF</th>
+                            <th>Preço</th>
+                            <th>Tipo Combustível</th>
+                            <th>Estado</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var fatura in Model)
+                        {
+                            <tr>
+                                <td>@fatura.GuidFatura</td>
+                                <td>@fatura.Nif</td>
+                                <td>@fatura.Preco €</td>
+                                <td>@fatura.TipoComb</td>
+                                <td>@(fatura.Estado == Alves_Bandeira.Models.Fatura.EstadoFatura.Valida ? "Válida" : "Inválida")</td>
+                                <td>
+                                    <a class="list-action-link"  href="/Fatura/Detalhe/@fatura.GuidFatura">Ver Detalhes</a>
+                                    @if (ViewBag.User.Papel == 2)
+                                    {
+                                        <br/>
+                                        <a class="list-action-link" href="/Fatura/Eliminar/@fatura.GuidFatura">Eliminar</a>
+                                         <a class="list-action-link" href="/Fatura/Editar/@fatura.GuidFatura">Editar</a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                 <p class="list-empty">Nenhuma fatura encontrada.</p>
+            }
+        </div>
+        </div>
+</body>
+</html>

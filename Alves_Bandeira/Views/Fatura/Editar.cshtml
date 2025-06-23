@@ -1,0 +1,62 @@
+﻿@using Alves_Bandeira.Models;
+@model Fatura
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="/CSS/StyleSheet.css" />
+    <title>Editar Fatura - Alves Bandeira</title>
+</head>
+<body class="edit-page">
+    <div class="edit-container">
+        <h1 class="edit-title">Editar Fatura</h1>
+    
+     @if (ViewBag.Erro != null)
+    {
+        <div class="edit-error">
+            @ViewBag.Erro
+        </div>
+    }
+        
+        <form method="post" action="/Fatura/Editar/@Model.GuidFatura"  class="edit-form">
+            <div class="edit-form-group">
+                <label for="Nif" class="edit-form-label">NIF do Cliente:</label>
+                <input type="text" id="Nif" name="Nif" class="edit-form-input" value="@Model.Nif" required />
+            </div>
+
+            <div class="edit-form-group">
+                <label  class="edit-form-label" for="Preco">Preço (€):</label>
+                <input class="edit-form-input" type="text" id="Preco" name="Preco" value="@Model.Preco" required />
+            </div>
+
+            <div class="edit-form-group">
+                <label class="edit-form-label" for="TipoComb">Tipo de Combustível:</label>
+                <select  class="edit-form-select"  id="TipoComb" name="TipoComb" required>
+                    <option value="0" @(Model.TipoComb == Alves_Bandeira.Models.Fatura.TipoCombustivel.Gasolina ? "selected" : "")>Gasolina</option>
+                    <option value="1" @(Model.TipoComb == Alves_Bandeira.Models.Fatura.TipoCombustivel.Diesel ? "selected" : "")>Diesel</option>
+                    <option value="2" @(Model.TipoComb == Alves_Bandeira.Models.Fatura.TipoCombustivel.Gpl ? "selected" : "")>GPL</option>
+                </select>
+            </div>
+            <br />
+
+            <div class="edit-form-group">
+                <label class="edit-form-label" for="Estado">Estado da Fatura:</label>
+                <select class="edit-form-select" id="Estado" name="Estado" required>
+                    <option value="0" @(Model.Estado == Alves_Bandeira.Models.Fatura.EstadoFatura.Valida ? "selected" : "")>Válida</option>
+                    <option value="1" @(Model.Estado == Alves_Bandeira.Models.Fatura.EstadoFatura.Invalida ? "selected" : "")>Inválida</option>
+                </select>
+            </div>
+            <br />
+
+            <div class="edit-actions">
+                <button  class="edit-button" type="submit">Guardar Alterações</button>
+                <a href="/Fatura/Index"  class="edit-cancel-link">Cancelar</a>
+            </div>
+        </form>
+        </div>
+</body>
+</html>
